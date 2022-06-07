@@ -145,6 +145,8 @@ export default App;
 
 export const getServerSideProps = async (ctx) => {
 
+    //test
+
     const res=await axios.get(`${process.env.NEXT_PUBLIC_BACKEND}/blog/${ctx.query.id}`,{
         "credentials": "include",
         "mode": "cors"
