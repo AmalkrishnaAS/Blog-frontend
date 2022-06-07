@@ -8,7 +8,7 @@ const Table = ({blogs,setBlogs}) => {
 
     //slice date to show only date
     const sliceDate = (date) => {
-        return date.slice(0, 10)
+        return date
     }
 
     const handledelete = async (id) => {
