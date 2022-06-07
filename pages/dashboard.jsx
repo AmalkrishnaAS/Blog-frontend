@@ -12,7 +12,7 @@ const dashbord = (props) => {
 
   const fetchData = async () => {
 
-    const res = await axios.get('${process.env.NEXT_PUBLIC_BACKEND}/blog/all_by_user', {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND}/blog/all_by_user`, {
       headers: {
         'x-access-token': localStorage.getItem('token')
       }
