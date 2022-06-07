@@ -33,7 +33,7 @@ function App() {
       
             
         }
-        const res = await axios.post('http://localhost:5000/blog/create', data, {
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/blog/create`, data, {
         headers: {
           'x-access-token': localStorage.getItem('token')
         },
