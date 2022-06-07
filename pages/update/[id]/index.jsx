@@ -149,6 +149,7 @@ export const getServerSideProps = async (ctx) => {
         "credentials": "include",
         "mode": "cors"
     })
+    //check
     console.log(res.data)
     return {
         props: {
