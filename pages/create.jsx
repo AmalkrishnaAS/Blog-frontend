@@ -33,7 +33,7 @@ function App() {
       
             
         }
-        const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/blog/create`, data, {
+        const res = await axios.post('http://localhost:5000/blog/create', data, {
         headers: {
           'x-access-token': localStorage.getItem('token')
         },
@@ -49,7 +49,8 @@ function App() {
   }
 
     return(
-      <form className="max-w-[400px] sm:max-w-[800px] flex flex-col m-auto" onSubmit={handleSubmit}>
+        <div>
+      <form className="max-w-[300px] sm:max-w-[800px] flex flex-col m-auto" onSubmit={handleSubmit}>
       
 
 <div class="mb-6">
@@ -111,6 +112,7 @@ function App() {
 
 
 </form>
+        </div>  
 
     )
 }
