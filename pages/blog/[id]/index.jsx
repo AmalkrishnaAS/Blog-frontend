@@ -33,18 +33,18 @@ const index = ({blog,comments}) => {
     
     
   return (
-    <div class=" w-screen mx-auto p-5 sm:p-10 md:p-16 relative">
+    <div class="  w-screen mx-auto p-5 sm:p-10 md:p-16 relative">
        
         
   <div class=" mx-auto">
   <img className='m-auto max-h-[450px] ' src={blog.thumbnail} alt="" />
-    <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+    <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal ml-3">
         <div class="">
-              <div href="#" class="text-xs text-indigo-600 uppercase font-medium ">
+              <div href="#" class="text-xs ml-3 text-indigo-600 uppercase font-medium ">
               Last Update: {moment(blog.updated_at).fromNow()}
               </div>
-              <div class="text-gray-700 text-xs mt-2">Written By: <span href="#" class="text-indigo-600 font-medium  ease-in-out capitalize">
-              <h1  href="#" class="text-gray-900 font-bold text-3xl mb-2">{blog.title}</h1>
+              <div class="text-gray-700 text-xs mt-2 ml-3">Written By: <span href="#" class="text-indigo-600 font-medium  ease-in-out capitalize">
+              <h1  href="#" class="text-gray-900 font-bold text-3xl mb-2 ">{blog.title}</h1>
              
                 {blog.Author}
               </span></div>
