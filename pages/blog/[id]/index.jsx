@@ -33,7 +33,7 @@ const index = ({blog,comments}) => {
     
     
   return (
-    <div class="  w-screen mx-auto p-5 sm:p-10 md:p-16 relative">
+    <div class="  w-screen  mx-auto p-5 sm:p-10 md:p-16 relative">
        
         
   <div class=" mx-auto">

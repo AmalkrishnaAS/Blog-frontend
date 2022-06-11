@@ -20,18 +20,24 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(0);
 
   //on route change start set progress to 20
-  Router.onRouteChangeStart = () => {
+  router.events.on('routeChangeStart', () => {
     setProgress(20);
   }
-
   //on route change end set progress to 100
-  Router.onRouteChangeComplete = () => {
+  );
+  router.events.on('routeChangeComplete', () => {
     setProgress(100);
   }
-
+  //on route change error set progress to 0
+  );
+  router.events.on('routeChangeError', () => {
+    setProgress(0);
+  }
+  //on route change end set progress to 0
+  );
 
   return (
-<div className='h-screen max-w-screen '>
+<div className='h-screen max-w-screen overflow-x-hidden '>
 
    <Navbar />
     <LoadingBar
