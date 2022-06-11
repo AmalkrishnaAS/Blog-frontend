@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   
 
   return (
-<div className='h-screen max-w-screen overflow-x-hidden '>
+<div className='h-screen max-w-screen overflow-x-hidden min-h-screen'>
 
    <Navbar />
     <LoadingBar
@@ -59,8 +59,10 @@ draggable
 pauseOnHover
 />
 
-  <Component {...pageProps} setprogress={setProgress} />
-  <Footer />
+  <Component  {...pageProps} setprogress={setProgress} />
+  
+    <Footer />
+  
   </div>)
 }
 

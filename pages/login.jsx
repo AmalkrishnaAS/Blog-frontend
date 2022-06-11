@@ -96,17 +96,17 @@ const login = (props) => {
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5"></h2>
         <div class="relative mb-4">
           <label for="email"  class="leading-7 text-sm text-gray-600">Email </label>
-          <input type="email" required id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
+          <input type="email" required id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-purple-800 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <div class="relative mb-4">
           <label for="password"  class="leading-7 text-sm text-gray-600">Password</label>
-          <input type="password" required minLength={8} id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
+          <input type="password" required minLength={8} id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-purple-700 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <label for ='submit' >
-        <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+        <button class="text-white bg-purple-700 border-0 py-2 px-8 focus:outline-none hover:bg-purple-800 rounded text-lg">Button</button>
         <input type="submit" className='hidden' />
         </label>
-        <p class="text-xs text-gray-500 mt-3">Does not have an account? <Link href='/signup'><a  className="text-purple-500 hover:underline">Create one.</a></Link></p>
+        <p class="text-xs text-gray-500 mt-3">Does not have an account? <Link href='/signup'><a  className="text-purple-700 hover:underline">Create one.</a></Link></p>
       </div>
     </div>
   </form>

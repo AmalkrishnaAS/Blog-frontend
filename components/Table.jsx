@@ -30,8 +30,8 @@ const Table = ({blogs,setBlogs}) => {
    
   return (
       //list of blogs
-    <div className=' max-w-screen  '>
-        <table className=" border-2 max-w-full mx-auto">
+    <div className=' max-w-screen overflow-x-auto  '>
+        <table className=" border-2 max-w-full mx-auto overflow-x-scroll">
             <thead>
                 <tr>
                     <th className="px-4 py-2">Title</th>

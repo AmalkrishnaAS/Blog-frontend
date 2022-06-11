@@ -47,7 +47,7 @@ const dashbord = (props) => {
       </div>
 
       
-      <div className='flex justify-center items-center text-purple-500 text-sm font-semibold'>
+      <div className='flex justify-center items-center text-purple-700 text-sm font-semibold'>
         <h1 className='text-lg'>Total Blogs: {blogs.length}</h1>
       </div>
 
@@ -55,7 +55,7 @@ const dashbord = (props) => {
       
        
       <div className="flex justify-end">
-      <button className="mr-4 mb-3 sm:mr-[10vw] sm:  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>router.push('/create')}>
+      <button className="mr-4 mb-3 sm:mr-[10vw] sm:  bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded" onClick={()=>router.push('/create')}>
           Create +
           </button>
       </div>
@@ -65,7 +65,7 @@ const dashbord = (props) => {
         <h1 className='text-3xl uppercase text-center mt-4'>Dashboard</h1>
         <div className='h-[80vh] flex justify-center items-center'>
         <div className='flex flex-col gap-6'><img src="/nothing.svg" className='h-52' alt="" />
-        <button className="   bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>router.push('/create')}>
+        <button className="   bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded" onClick={()=>router.push('/create')}>
           Create +
         </button>
        
