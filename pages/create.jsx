@@ -62,8 +62,8 @@ function App({setprogress}) {
   }
 
     return(
-        <div className="max-w-[800px] mx-6">
-      <form className="max-w-[300px] sm:max-w-[800px] flex flex-col m-auto" onSubmit={handleSubmit}>
+        <div className="max-w-[800px] mx-auto flex flex-col justify-center items-center px-6">
+      <form className=" mx-auto max-w-[300px] sm:max-w-[800px] " onSubmit={handleSubmit}>
       
 
 <div class="mb-6">
