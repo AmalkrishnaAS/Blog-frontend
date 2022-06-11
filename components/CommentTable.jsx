@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 const CommentTable = ({commentList}) => {
   return (
-    <table className='w-screen'>
+    <table >
                 <tbody>
                {
                  commentList.map(comment => (

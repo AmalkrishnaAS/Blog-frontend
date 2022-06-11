@@ -6,6 +6,7 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "../../../node_modules/react-quill/dist/quill.snow.css";
 import {useRouter} from 'next/router'
 import {useEffect} from 'react'
+import { toast } from "react-toastify";
 function App({data}) {
 
     useEffect(() => {
@@ -61,11 +62,12 @@ function App({data}) {
               
         
               })
-              console.log(res.data)
-              Router.push('/')
+              toast.success('Blog updated successfully')
+            
+              Router.push('/dashboard')
             
         } catch (error) {
-            alert('cannot update selected blog, Please make sure you are logged in')
+         toast.error('Error updating blog')
             
         }
        

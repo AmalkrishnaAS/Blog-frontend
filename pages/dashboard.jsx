@@ -36,7 +36,7 @@ const dashbord = (props) => {
 
     }, [])
   return (
-    <div className='min-h-[80vh]'>
+    <div className='min-h-[80vh] max-w-screen'>
      
      
       

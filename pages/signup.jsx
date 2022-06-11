@@ -2,8 +2,10 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import {toast} from 'react-toastify'
+import Link from 'next/dist/client/link'
 
-const login = () => {
+const login = ({setprogress}) => {
   const router = useRouter()
     const [formdata, setformdata] = useState({
         email: '',
@@ -14,10 +16,13 @@ const login = () => {
     const [data, setData] = useState(null)
 
     const handlesubmit = async (e) => {
+
         e.preventDefault()
+        setprogress(20);
 
         if(formdata.password!==formdata.cpassword){
-            alert('Password not match')
+          toast.warning('Passwords do not match')
+            setprogress(0);
             return
         }
 
@@ -30,7 +35,9 @@ const login = () => {
           router.push('/login')
   
         } catch (error) {
-          alert(error.response.data.message)
+          
+          toast.error('Something went wrong')
+          setprogress(0);
           
         }
        
@@ -77,16 +84,16 @@ const login = () => {
       <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5"></h2>
         <div class="relative mb-4">
-          <label for="email" class="leading-7 text-sm text-gray-600">Email </label>
-          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
+          <label for="email"  class="leading-7 text-sm text-gray-600">Email </label>
+          <input type="email" required id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <div class="relative mb-4">
           <label for="name" class="leading-7 text-sm text-gray-600">Full Name</label>
-          <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
+          <input type="text" required minLength={3} id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <div class="relative mb-4">
           <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-          <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
+          <input type="password" required minLength={5} id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <div class="relative mb-4">
           <label for="cpassword" class="leading-7 text-sm text-gray-600"> Confirm Password</label>
@@ -96,7 +103,12 @@ const login = () => {
         <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
         <input type="submit" className='hidden' />
         </label>
-        <p class="text-xs text-gray-500 mt-3">Your Data is completely private.</p>
+        <p class="text-xs text-gray-500 mt-3">Already have an Account?
+          <Link href="/login">
+            <a className='text-indigo-500'> Login</a>
+          </Link>
+          
+        </p>
       </div>
     </div>
   </form>

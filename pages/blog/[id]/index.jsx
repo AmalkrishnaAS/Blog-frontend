@@ -71,7 +71,7 @@ const index = ({blog,comments}) => {
         </div>
     </div>
     <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-      <h1 className='text-gray-700 uppercase mb-3 font-semibold'>{`comments (${comments.length})`}</h1>
+      <h1 className='text-gray-700 uppercase mb-3 font-semibold'>{`comments (${commentList.length})`}</h1>
       <div className='flex flex-col gap-3'>
         <CommentForm setcommentList={setcommentList} commentList={commentList}>
 

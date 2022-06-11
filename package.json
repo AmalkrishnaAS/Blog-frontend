@@ -16,7 +16,9 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-html-parser": "^2.0.2",
-    "react-quill": "^2.0.0-beta.3"
+    "react-quill": "^2.0.0-beta.3",
+    "react-toastify": "^9.0.4",
+    "react-top-loading-bar": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "17.0.35",

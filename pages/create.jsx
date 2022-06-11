@@ -4,8 +4,9 @@ import axios from "axios";
 import Router from "next/router";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "../node_modules/react-quill/dist/quill.snow.css";
+import { toast } from "react-toastify";
 
-function App() {
+function App({setprogress}) {
     const [value, setValue] = useState('')
     const[formdata,setFormdata]=useState({
         title:'',
@@ -23,8 +24,10 @@ function App() {
     }
     
     const handleSubmit = async (e) => {
+      
 
         e.preventDefault();
+        setprogress(20);
         const data={
             title:formdata.title,
             content:value,
@@ -33,6 +36,7 @@ function App() {
       
             
         }
+        try {
         const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/blog/create`, data, {
         headers: {
           'x-access-token': localStorage.getItem('token')
@@ -42,8 +46,17 @@ function App() {
       
 
       })
-      console.log(res.data)
-      Router.push('/')
+      toast.success('Blog created successfully')
+      setprogress(100);
+        Router.push('/dashboard')
+    } catch (error) {
+        console.log(error)
+        toast.error('Something went wrong')
+        setprogress(0);
+    }
+    
+
+     
        
      
   }

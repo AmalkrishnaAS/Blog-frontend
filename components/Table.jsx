@@ -3,21 +3,29 @@ import Link from 'next/link'
 import {PencilAltIcon} from '@heroicons/react/outline'
 import { TrashIcon } from '@heroicons/react/outline'
 import axios from 'axios'
-
+import { toast } from 'react-toastify'
 const Table = ({blogs,setBlogs}) => {
 
     //slice date to show only date
     const sliceDate = (date) => {
-        return date
+        return date.slice(0, 10)
     }
 
     const handledelete = async (id) => {
-        setBlogs(blogs.filter(blog => blog.id !== id))
-        await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND}/blog/delete/${id}`, {
-            headers: {
-                'x-access-token': localStorage.getItem('token')
-            }
-        })
+        try {
+            setBlogs(blogs.filter(blog => blog.id !== id))
+            await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND}/blog/delete/${id}`, {
+                headers: {
+                    'x-access-token': localStorage.getItem('token')
+                }
+            })
+            toast.success('Blog deleted successfully')
+            
+        } catch (error) {
+            toast.error('Error deleting blog')
+            
+        }
+      
     }
    
   return (
@@ -31,6 +39,7 @@ const Table = ({blogs,setBlogs}) => {
                     <th className="px-4 py-2">Created At</th>
                     <th className="px-4 py-2">Last Update</th>
                     <th className="px-4 py-2">Actions</th>
+                    <th className="px-4 py-2">Status</th>
                     
                 </tr>
             </thead>
@@ -53,6 +62,9 @@ const Table = ({blogs,setBlogs}) => {
 
                           
                           
+                        </td>
+                        <td className="border px-4 py-2">
+                            {item.publish ? <p className='text-green-700'>Published</p> : <p className='text-red-700'>Draft</p>}
                         </td>
 
                     </tr>

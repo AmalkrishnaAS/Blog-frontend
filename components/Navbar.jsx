@@ -20,8 +20,8 @@ const Navbar = () => {
   
     const router = useRouter()
   return (
-    <header class="text-gray-600 body-font  ">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <header class="text-gray-600 body-font flex justify-center  max-w-screen">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-center">
     <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
     <img src="/logo.png" className='h-12 w-12' alt="" />
       <span class="ml-3 text-xl">HelloCoder</span>
