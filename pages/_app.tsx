@@ -8,11 +8,22 @@ import { ToastContainer, toast } from 'react-toastify';
   import LoadingBar from 'react-top-loading-bar'
   import { useRouter } from 'next/router'
   import Router from 'next/router';
+  import { useEffect } from 'react';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
+
+
   //set progress on route change
+  Router.events.on('routeChangeStart', () => {
+    setProgress(20)
+  }
+  )
+  Router.events.on('routeChangeComplete', () => {
+    setProgress(100)
+  }
+  )
   
 
 
@@ -20,21 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(0);
 
   //on route change start set progress to 20
-  router.events.on('routeChangeStart', () => {
-    setProgress(20);
-  }
-  //on route change end set progress to 100
-  );
-  router.events.on('routeChangeComplete', () => {
-    setProgress(100);
-  }
-  //on route change error set progress to 0
-  );
-  router.events.on('routeChangeError', () => {
-    setProgress(0);
-  }
-  //on route change end set progress to 0
-  );
+  
 
   return (
 <div className='h-screen max-w-screen overflow-x-hidden '>
