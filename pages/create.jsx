@@ -62,17 +62,17 @@ function App({setprogress}) {
   }
 
     return(
-        <div>
+        <div className="max-w-[800px] mx-6">
       <form className="max-w-[300px] sm:max-w-[800px] flex flex-col m-auto" onSubmit={handleSubmit}>
       
 
 <div class="mb-6">
     <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 ">Title</label>
-    <input type="text" id="base-input" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-purple-700 block w-full p-2.5 " onChange={handleChange} required />
+    <input type="text" id="base-input" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-purple-500 block w-full p-2.5 " onChange={handleChange} required />
 </div>
 <div class="mb-6">
     <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 ">Thumbnail URL</label>
-    <input type="text" name="thumbnail" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-purple-700 block w-full p-2.5 " onChange={handleChange} />
+    <input type="text" name="thumbnail" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-purple-500 block w-full p-2.5 " onChange={handleChange} />
 </div>
 <div class="mb-3">
     <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 ">Content</label>
