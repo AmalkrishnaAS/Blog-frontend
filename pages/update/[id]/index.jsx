@@ -90,7 +90,7 @@ function App({data}) {
 </div>
 <div class="mb-6">
     <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 ">Thumbnail URL</label>
-    <input value={data.thumbnail} type="text" name="thumbnail" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-purple-500 block w-full p-2.5 " onChange={handleChange} />
+    <input value={formdata.thumbnail} type="text" name="thumbnail" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-purple-500 block w-full p-2.5 " onChange={handleChange} />
 </div>
 <div class="mb-3">
     <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 ">Content</label>
@@ -145,7 +145,7 @@ function App({data}) {
       </label>
       </div>
     <div class="">
-    <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800  focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+    <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800  focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
 </div>
 
 
