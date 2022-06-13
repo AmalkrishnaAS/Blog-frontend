@@ -64,7 +64,7 @@ const CommentForm = ({setcommentList,commentList}) => {
 <textarea onChange={handleChange}  value={comment} id="comment" rows="4" class="px-0 w-full text-sm text-gray-900 bg-white border-0 focus:border-gray-400 focus:outline-none  " placeholder="Write a comment..." required="" name='comment'></textarea>
 </div>
 <div class="flex justify-between items-center py-2 px-3 border-t ">
-<button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200  hover:bg-blue-800">
+<button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-purple-700 rounded-lg focus:ring-4 focus:ring-purple-200  hover:bg-purple-800">
 Post comment
 </button>
 <div class="flex pl-0 space-x-1 sm:pl-2">
