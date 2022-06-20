@@ -4,11 +4,13 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import Table from '../components/Table'
 import Link from 'next/dist/client/link'
+import Modal from '../components/Modal'
 
 
 
 const dashbord = (props) => {
   const [blogs, setBlogs] = useState([])
+  const [deleteId, setDeleteId] = useState('')
 
   const fetchData = async () => {
 
@@ -37,6 +39,9 @@ const dashbord = (props) => {
     }, [])
   return (
     <div className='min-h-[80vh] max-w-screen'>
+      <Modal deleteId={deleteId} setDeleteId={setDeleteId} setprogress={props.setprogress} setBlogs={setBlogs} blogs={blogs} />
+    
+
      
      
       
@@ -59,7 +64,11 @@ const dashbord = (props) => {
           Create +
           </button>
       </div>
-      <Table blogs={blogs} setBlogs={setBlogs} />
+      <Table blogs={blogs} setBlogs={setBlogs} setprogress={
+        props.setprogress
+      }
+      deleteId={deleteId} setDeleteId={setDeleteId}  /> 
+    
       </div>:
       <div className=' text-gray-500 text-sm font-semibold'>
         <h1 className='text-3xl uppercase text-center mt-4'>Dashboard</h1>

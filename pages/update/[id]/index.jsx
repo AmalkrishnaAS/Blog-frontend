@@ -7,7 +7,7 @@ import "../../../node_modules/react-quill/dist/quill.snow.css";
 import {useRouter} from 'next/router'
 import {useEffect} from 'react'
 import { toast } from "react-toastify";
-function App({data}) {
+function App({data},props) {
 
     useEffect(() => {
      
@@ -52,6 +52,7 @@ function App({data}) {
       
             
         }
+        props.setprogress(20);
         try {
             const res = await axios.put(`${process.env.NEXT_PUBLIC_BACKEND}/blog/update/${router.query.id}`, data, {
                 headers: {
@@ -63,11 +64,13 @@ function App({data}) {
         
               })
               toast.success('Blog updated successfully')
+                props.setprogress(100);
             
               Router.push('/dashboard')
             
         } catch (error) {
          toast.error('Error updating blog')
+            props.setprogress(0);
             
         }
        
@@ -81,7 +84,8 @@ function App({data}) {
     },[])
 
     return(
-      <form className="max-w-[400px] sm:max-w-[800px] flex flex-col m-auto" onSubmit={handleSubmit}>
+        <div className="max-w-[800px] mx-auto flex flex-col justify-center items-center px-6">
+       <form className=" mx-auto max-w-[300px] sm:max-w-[800px] " onSubmit={handleSubmit}>
       
 
 <div class="mb-6">
@@ -150,6 +154,7 @@ function App({data}) {
 
 
 </form>
+</div>
 
     )
 }

@@ -36,6 +36,7 @@ function App({setprogress}) {
       
             
         }
+      
         try {
         const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/blog/create`, data, {
         headers: {
@@ -131,6 +132,7 @@ function App({setprogress}) {
     
     
     <div class="">
+    <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800  focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
     
 </div>
 
