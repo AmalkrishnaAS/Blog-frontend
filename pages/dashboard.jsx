@@ -11,6 +11,7 @@ import Modal from '../components/Modal'
 const dashbord = (props) => {
   const [blogs, setBlogs] = useState([])
   const [deleteId, setDeleteId] = useState('')
+  const [loading, setloading] = useState(true)
 
   const fetchData = async () => {
 
@@ -22,6 +23,7 @@ const dashbord = (props) => {
     
     console.log(res.data)
     setBlogs(res.data)
+    setloading(false)
 
   }
     const router = useRouter()
@@ -30,8 +32,9 @@ const dashbord = (props) => {
         {
             router.push('/login')
         }
-        fetchData()
+        fetchData(null)
         console.log(blogs)
+      
 
       
 
@@ -39,16 +42,21 @@ const dashbord = (props) => {
     }, [])
   return (
     <div className='min-h-[80vh] max-w-screen'>
+      
       <Modal deleteId={deleteId} setDeleteId={setDeleteId} setprogress={props.setprogress} setBlogs={setBlogs} blogs={blogs} />
     
 
-     
+      {
+        loading&&<div className='flex justify-center '><svg class="animate-spin h-8 w-8 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+        </div>
+      }
+
      
       
       
       {blogs.length!==0?<div>
       <div className='flex justify-center items-center text-gray-500 text-sm font-semibold'>
-        <h1 className='text-3xl uppercase'>Dashboard</h1>
+        <h1 className='text-3xl uppercase mt-6'>Dashboard</h1>
       </div>
 
       

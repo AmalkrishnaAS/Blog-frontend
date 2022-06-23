@@ -103,7 +103,7 @@ const login = (props) => {
           <input type="password" required minLength={8} id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-purple-700 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <label for ='submit' >
-        <button class="text-white bg-purple-700 border-0 py-2 px-8 focus:outline-none hover:bg-purple-800 rounded text-lg">Button</button>
+        <button class="text-white bg-purple-700 border-0 py-2 px-8 focus:outline-none hover:bg-purple-800 rounded text-lg">Login</button>
         <input type="submit" className='hidden' />
         </label>
         <p class="text-xs text-gray-500 mt-3">Does not have an account? <Link href='/signup'><a  className="text-purple-700 hover:underline">Create one.</a></Link></p>

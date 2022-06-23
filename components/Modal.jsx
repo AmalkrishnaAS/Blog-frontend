@@ -9,7 +9,7 @@ export default function Modal({deleteId, setDeleteId,  setprogress, setBlogs,blo
         console.log(id)
         setprogress(20);
         try {
-            setBlogs(blogs.filter(blog => blog.id !== id))
+           
             await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND}/blog/delete/${id}`, {
                 headers: {
                     'x-access-token': localStorage.getItem('token')
@@ -17,6 +17,7 @@ export default function Modal({deleteId, setDeleteId,  setprogress, setBlogs,blo
             })
             setprogress(100);
             toast.success('Blog deleted successfully')
+            setBlogs(blogs.filter(blog => blog.id !== id))
             setDeleteId(null)
             
         } catch (error) {

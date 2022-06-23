@@ -12,14 +12,15 @@ const Footer = () => {
 <Link href={'/'}><a  class="mr-4 hover:underline md:mr-6 ">Home</a></Link>
 </li>
 <li>
-<a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+<Link href={'/login'}><a  class="mr-4 hover:underline md:mr-6 ">Sign Up</a></Link>
 </li>
 <li>
-<a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+<Link href={'/'}><a  class="mr-4 hover:underline md:mr-6 ">Login</a></Link>
 </li>
 <li>
-<a href="#" class="hover:underline">Contact</a>
+<a  class="mr-4 hover:underline md:mr-6 " href='https://github.com/AmalkrishnaAS/Blog-frontend' target={'_blank'}>Contribute</a>
 </li>
+
 </ul>
 </footer>
 
