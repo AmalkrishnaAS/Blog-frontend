@@ -30,7 +30,7 @@ const [isOpen, setisOpen] = useState(false)
     const router = useRouter()
   return (
   
-<nav className="bg-white mb-9 border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
+<nav className="sticky top-0 z-50 shadow-md bg-white mb-9 border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
 <div className="container flex flex-wrap justify-between items-center mx-auto">
 <p  className="flex items-center">
 {/* <img src="/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="HelloCoder Logo" /> */}
