@@ -13,6 +13,7 @@ const dashbord = (props) => {
   const [blogs, setBlogs] = useState([])
   const [deleteId, setDeleteId] = useState('')
   const [loading, setloading] = useState(true)
+  const [error, setError] = useState(null)
 
   const fetchData = async () => {
     try {
@@ -25,9 +26,12 @@ const dashbord = (props) => {
       console.log(res.data)
       setBlogs(res.data)
       setloading(false)
+      return null
     } catch (error) {
-      setloading(false)
-      toast.error("Error fetching your blogs 😢 Try logging in again")
+     setError(error)
+     console.log(error)
+     setloading(false)
+     return
       
     }
 
@@ -35,13 +39,17 @@ const dashbord = (props) => {
 
   }
     const router = useRouter()
-    useEffect(() => {
+    useEffect( () => {
         if (!localStorage.getItem('token')) 
         {
             router.push('/login')
         }
-        fetchData(null)
-        console.log(blogs)
+         fetchData()
+         if(error)
+         { toast.error("Error fetching your blogs 😢 Try logging in again")
+        }
+        
+         console.log(blogs)
       
 
       

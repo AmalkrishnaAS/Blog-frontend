@@ -30,6 +30,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   //progress state
   const [progress, setProgress] = useState(0);
 
+
+
   //on route change start set progress to 20
   
 
