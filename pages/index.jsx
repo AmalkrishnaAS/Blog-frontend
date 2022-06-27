@@ -17,7 +17,8 @@ const Home = (props) => {
 
 
   return (
-    <div className='   max-w-screen mx-2 min-h-[79vh] ml-3'>
+    <div>
+    <div className='   max-w-screen ml-3  min-h-[79vh]    max-w-screen'>
       {data.filter((item)=>item.publish===true).length?<section className="text-gray-600 body-font w-screen  grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-5">
       {
         data.filter((data)=>data.publish===true).map((item) => {
@@ -46,6 +47,7 @@ const Home = (props) => {
   
     
     </div>}
+  </div>
   </div>
 
   )
