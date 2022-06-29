@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
 import { ClockIcon } from '@heroicons/react/outline'
+import { UserIcon } from '@heroicons/react/outline'
 
 const Card = ({item}) => {
 
@@ -27,11 +28,14 @@ const Card = ({item}) => {
 
   return (
  <div className="sm:max-w-[420px] md:max-w-[430px]">
-          <div className="h-full border-2 border-gray-200 border-opacity-60 shadow-md max-w-[90vw]  rounded-lg overflow-hidden">
+          <div className="h-full border-2 border-gray-200 border-opacity-60 shadow-sm max-w-[90vw]  rounded-lg overflow-hidden">
             <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={item.thumbnail?item.thumbnail:"/logo-purple.webp"} alt="blog" />
             <div className="p-6">
-              <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">{item.Author}</h2>
-              <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{item.title}</h1>
+            
+              <h1 className="title-font text-lg font-medium text-gray-900 mb-1">{item.title}</h1>
+              <h2 className=" p-1 text-xs title-font font-medium text-gray-700 mb-3 capitalise flex ">
+                <UserIcon className='mr-2 h-4 '></UserIcon>
+                {item.Author}</h2>
              
               <div className="flex items-center flex-wrap ">
                 <Link href={`/blog/${item.id}`}><a className="text-purple-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More

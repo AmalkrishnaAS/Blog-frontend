@@ -44,9 +44,11 @@ const index = ({blog,comments}) => {
               Last Update: {moment(blog.updated_at).fromNow()}
               </div>
               <div className="text-gray-700 text-xs mt-2 ml-3">Written By: <span href="#" className="text-indigo-600 font-medium  ease-in-out capitalize">
+              <h6 className='mt-2'>{blog.Author}</h6>
               <h1  href="#" className="text-gray-900 font-bold text-3xl mb-2 ">{blog.title}</h1>
+               
+            
              
-                {blog.Author}
               </span></div>
                <div className='ql-snow ' ><div className='ql-editor '>{ReactHtmlParser(blog.content)}</div></div>
               

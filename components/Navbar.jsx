@@ -28,6 +28,8 @@ const [isOpen, setisOpen] = useState(false)
 
   
     const router = useRouter()
+
+  
   return (
   
 <nav className="sticky top-0 z-50 shadow-md bg-white mb-9 border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
