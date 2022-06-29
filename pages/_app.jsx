@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,9 +9,17 @@ import { ToastContainer, toast } from 'react-toastify';
   import { useRouter } from 'next/router'
   import Router from 'next/router';
   import { useEffect } from 'react';
+  import {ChevronUpIcon} from '@heroicons/react/outline'
+  import {motion } from 'framer-motion'
 
+function MyApp({ Component, pageProps }) {
+  const [isOpen, setisOpen] = useState(false)
 
-function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    setisOpen(false)
+  }
+  , [])
   const router = useRouter()
 
 
@@ -24,6 +32,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     setProgress(100)
   }
   )
+  Router.events.on('routeChangeError', () => {
+    setProgress(100)
+  }
+  )
+  const screenTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   
 
 
@@ -36,9 +52,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   
 
   return (
-<div className='h-screen max-w-screen overflow-x-hidden min-h-screen'>
+<div className='h-screen max-w-screen  min-h-screen'>
 
-   <Navbar />
+   <Navbar setisOpen={setisOpen} />
     <LoadingBar
       progress={progress}
       height={3}
@@ -48,6 +64,7 @@ function MyApp({ Component, pageProps }: AppProps) {
      
       onLoaderFinished={() => setProgress(0)}
     />
+   
     <ToastContainer
 position="top-right"
 autoClose={5000}
@@ -61,9 +78,25 @@ draggable
 pauseOnHover
 />
 
-  <Component  {...pageProps} setprogress={setProgress} />
+<div className='overflow-x-hidden'>
+<Component  {...pageProps} setprogress={setProgress} />
+</div>
+
+  
+ 
+ 
   
     <Footer />
+    <motion.div className="fixed bottom-0 right-0 mr-4 mb-4 shadow-md rounded-full" whileHover={{scale:1.1,opacity:1}} whileTap={{scale:0.9}}
+    initial={{scale:1,opacity:0.5}}
+    >
+    
+    <button onClick={screenTop} className='h-10 w-10 bg-purple-300 rounded-full shadow-lg flex justify-center items-center'>
+    <ChevronUpIcon className='text-purple-500 p-2 ' />
+    </button>
+      
+    
+  </motion.div>
   
   </div>)
 }

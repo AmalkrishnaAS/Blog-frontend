@@ -3,15 +3,5 @@
 @tailwind utilities;
 
 
- .ql-editor {
-   min-height: 330px;
-  
- }
-
- ::-webkit-scrollbar {
-   width: 0px;
-   background: transparent;
- }
  
  
-  

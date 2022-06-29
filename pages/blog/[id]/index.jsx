@@ -43,9 +43,10 @@ const index = ({blog,comments}) => {
               <div href="#" className="text-xs ml-3 text-indigo-600 uppercase font-medium ">
               Last Update: {moment(blog.updated_at).fromNow()}
               </div>
-              <div className="text-gray-700 text-xs mt-2 ml-3">Written By: <span href="#" className="text-indigo-600 font-medium  ease-in-out capitalize">
-              <h6 className='mt-2'>{blog.Author}</h6>
+              <div className="text-gray-700 text-xs mt-2 ml-3"> <span href="#" className="text-indigo-600 font-medium  ease-in-out capitalize">
+             
               <h1  href="#" className="text-gray-900 font-bold text-3xl mb-2 ">{blog.title}</h1>
+              <h6 className='mt-2'>{blog.Author}</h6>
                
             
              

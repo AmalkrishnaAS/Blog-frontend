@@ -10,6 +10,7 @@
     "@ckeditor/ckeditor5-react": "^5.0.2",
     "@heroicons/react": "^1.0.6",
     "axios": "^0.27.2",
+    "framer-motion": "^6.3.16",
     "md-editor": "^0.1.0-a",
     "moment": "^2.29.3",
     "next": "latest",

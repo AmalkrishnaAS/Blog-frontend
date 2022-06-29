@@ -18,7 +18,7 @@ const Table = ({blogs,setBlogs,setprogress,deleteId,setDeleteId,setModal
       //list of blogs
     <div className=' max-w-screen overflow-x-auto  '>
         <table className=" border-2 max-w-full mx-auto overflow-x-scroll">
-            <thead>
+            <thead className='bg-purple-300'>
                 <tr>
                     <th className="px-4 py-2">Title</th>
                    
@@ -32,8 +32,8 @@ const Table = ({blogs,setBlogs,setprogress,deleteId,setDeleteId,setModal
             <tbody>
               {
                 blogs.map(item => (
-                    <tr key={item.id}>
-                        <td className="border px-4 py-2 ml"><Link href={'/blog/'+item.id}><a className=''><p className='text-purple-700'>{item.title}</p></a></Link></td>
+                    <tr key={item.id} className='bg-purple-50'>
+                        <td className="border px-4 py-2 ml "><Link href={'/blog/'+item.id}><a className=''><p className='text-purple-700'>{item.title}</p></a></Link></td>
                        
                         <td className="border px-4 py-2">{sliceDate(item.created_at)}</td>
                         <td className="border px-4 py-2">{sliceDate(item.updated_at)}</td>
@@ -42,7 +42,7 @@ const Table = ({blogs,setBlogs,setprogress,deleteId,setDeleteId,setModal
                             <Link href={'/update/'+item.id}><a className=''><PencilAltIcon className='h-6 w-6 text-gray-500 hover:text-purple-600 duration-200 '></PencilAltIcon></a></Link>
                             <button className=''><TrashIcon onClick={()=>{
                                 setDeleteId(item.id)
-                            }} className='h-6 w-6 text-gray-500 hover:text-purple-600 duration-200'></TrashIcon></button>
+                            }} className='h-6 w-6 text-gray-500 hover:text-purple-800 duration-200'></TrashIcon></button>
                             </div>
 
 
