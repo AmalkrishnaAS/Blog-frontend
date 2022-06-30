@@ -28,7 +28,7 @@ const Card = ({item}) => {
  
 
   return (
- <motion.div className="sm:max-w-[420px] md:max-w-[430px]"
+ <motion.div className="max-w-sm rounded-lg shadow-lg overflow-hidden"
   
  >
           <div className="h-full border-2 border-gray-200 border-opacity-60 shadow-sm max-w-[90vw]  rounded-lg overflow-hidden">

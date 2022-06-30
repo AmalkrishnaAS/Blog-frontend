@@ -58,6 +58,9 @@ const [isOpen, setisOpen] = useState(false)
 <li>
 <Link href='/dashboard'><a href="/" className={`block py-2 pr-4 pl-3  ${router.pathname==='/dashboard'?'bg-purple-700 text-white':'bg-transparent'} rounded md:bg-transparent  ${router.pathname==='/dashboard'?'md:text-purple-700':''} `} aria-current="page">Dashboard</a></Link>
 </li>
+<li>
+<Link href='/trending'><a href="/" className={`block py-2 pr-4 pl-3  ${router.pathname==='/trending'?'bg-purple-700 text-white':'bg-transparent'} rounded md:bg-transparent  ${router.pathname==='/trending'?'md:text-purple-700':''} `} aria-current="page">Discover 🌐</a></Link>
+</li>
 
 
 </ul>

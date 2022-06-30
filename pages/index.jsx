@@ -18,8 +18,8 @@ const Home = (props) => {
 
   return (
     <div>
-    <div className='   max-w-screen ml-3  min-h-[79vh]    max-w-screen'>
-      {data.filter((item)=>item.publish===true).length?<section className="text-gray-600 body-font w-screen  grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-5">
+    <div className='      min-h-[79vh]     '>
+      {data.filter((item)=>item.publish===true).length?<section className="flex flex-wrap gap-6 justify-center">
       {
         data.filter((data)=>data.publish===true).map((item) => {
           return (
