@@ -27,7 +27,7 @@ const trending = ({data}) => {
             })
         }
         </div>
-        <div className='mx-auto text-center'>
+        <div className='mx-auto '>
        <a href="http://github.com" className='text-gray-600 ' target="_blank" rel="noopener noreferrer">Source : Github</a>
        </div>
     </div>
@@ -35,7 +35,7 @@ const trending = ({data}) => {
 }
 export async function getServerSideProps() {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND}/repos`)
-    console.log(res.data)
+    
     return {
         props: {
             data: res.data

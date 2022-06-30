@@ -1,5 +1,5 @@
 import React from 'react'
-import { isTemplateExpression } from 'typescript'
+import { StarIcon } from '@heroicons/react/solid'
 
 const Repo = ({item}) => {
 
@@ -19,8 +19,12 @@ const Repo = ({item}) => {
         <h5 class="mb-2 text-2xl min-h-[50px] hover:text-purple-800 duration-200 hover:scale-105 tracking-tight text-gray-900 font-medium" >{item.title}</h5>
     </a>
     
-    <p className='text-sm text-purple-700 font-bold mb-2 '>
-        {item.language}
+    <p className='text-sm text-purple-700 font-bold mb-2  flex items-center'>
+        <span>
+            <StarIcon className='mr-2 h-4'></StarIcon>
+        </span>
+        {item.stars}
+
     </p>
     <p class="mb-3 font-normal min-h-[50px]  ">{limit(item.description,70)}</p>
     <a href={item.link} class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 ">

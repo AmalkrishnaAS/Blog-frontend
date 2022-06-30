@@ -29,9 +29,9 @@ const login = ({setprogress}) => {
 
        
         try {
-          console.log(formdata)
+         
           const res=await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/user/register`, {...formdata,avatar:null})
-          console.log(res.data)
+         
           router.push('/login')
   
         } catch (error) {

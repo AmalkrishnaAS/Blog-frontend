@@ -23,13 +23,11 @@ const dashbord = (props) => {
         }
       })
       
-      console.log(res.data)
       setBlogs(res.data)
       setloading(false)
       return null
     } catch (error) {
      setError(error)
-     console.log(error)
      setloading(false)
      return
       
@@ -44,13 +42,13 @@ const dashbord = (props) => {
         {
             router.push('/login')
         }
-        console.log(error)
+      
          fetchData()
          if(error)
          { toast.error("Error fetching your blogs 😢 Try logging in again")
         }
         
-         console.log(blogs)
+        
       
 
       

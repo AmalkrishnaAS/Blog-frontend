@@ -30,7 +30,7 @@ const login = (props) => {
         try {
 
           const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/user/login`, formdata)
-          console.log(res.response)
+         
   
           const token = res.data.token
           if(token){
@@ -57,7 +57,7 @@ const login = (props) => {
 
 
      
-        // console.log(token)
+        
         // router.push('/dashboard')
         
         
@@ -66,7 +66,7 @@ const login = (props) => {
 
     
 
-        console.log(formdata)
+      
      
     }
 

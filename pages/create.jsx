@@ -51,7 +51,6 @@ function App({setprogress}) {
       setprogress(100);
         Router.push('/dashboard')
     } catch (error) {
-        console.log(error)
         toast.error('Something went wrong')
         setprogress(0);
     }
