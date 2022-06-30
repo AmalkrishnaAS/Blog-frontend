@@ -6,9 +6,9 @@ const trending = ({data}) => {
   return (
     <div>
         <div className='flex flex-col items-center  text-sm font-semibold text-purple-700'>
-        <h1 className='text-center uppercase text-2xl font-bold text-gray-600 tracking-wider'>
+        <h1 className='text-center uppercase text-2xl font-bold text-gray-600 tracking-wider flex items-center'>
             Trending
-            <span className=' font-normal text-sm bg-purple-700 p-2 text-white ml-3 rounded-full h-2 w-2'>
+            <span className=' font-normal text-sm bg-purple-700 p-2 text-white ml-3 rounded-full h-8 w10 flex items-center justify-center'>
                     {data.length}
                 </span>
             
