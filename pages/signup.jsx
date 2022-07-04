@@ -31,6 +31,11 @@ const login = ({setprogress}) => {
         try {
          
           const res=await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/user/register`, {...formdata,avatar:null})
+          if(res.data.message){
+            toast.error(res.data.message)
+            setprogress(0);
+            return
+          }
          
           router.push('/login')
   
@@ -92,8 +97,8 @@ const login = ({setprogress}) => {
           <input type="text" required minLength={3} id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-purple-800 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <div className="relative mb-4">
-          <label for="password" className="leading-7 text-sm text-gray-600">Password</label>
-          <input type="password" required minLength={5} id="password" name="password" className="w-full bg-white rounded border border-gray-300 focus:border-purple-800 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
+          <label for="password"  className="leading-7 text-sm text-gray-600">Password</label>
+          <input type="password" required minLength={8} id="password" name="password" className="w-full bg-white rounded border border-gray-300 focus:border-purple-800 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handlechange} />
         </div>
         <div className="relative mb-4">
           <label for="cpassword" className="leading-7 text-sm text-gray-600"> Confirm Password</label>
