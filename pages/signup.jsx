@@ -33,8 +33,8 @@ const login = ({setprogress}) => {
           const res=await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/user/register`, {...formdata,avatar:null})
           if(res.data.message){
             toast.error(res.data.message)
-            setprogress(0);
-            return
+            await setprogress(0);
+            return;
           }
          
           router.push('/login')
