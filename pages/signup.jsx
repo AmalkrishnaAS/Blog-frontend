@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import {toast} from 'react-toastify'
 import Link from 'next/dist/client/link'
 
-const login = ({setprogress}) => {
+const signup = ({setprogress}) => {
   const router = useRouter()
     const [formdata, setformdata] = useState({
         email: '',
@@ -33,7 +33,7 @@ const login = ({setprogress}) => {
           const res=await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/user/register`, {...formdata,avatar:null})
           if(res.data.message){
             toast.error(res.data.message)
-            await setprogress(0);
+            await setprogress(100);
             return;
           }
          
@@ -42,7 +42,7 @@ const login = ({setprogress}) => {
         } catch (error) {
           
           toast.error('Something went wrong')
-          setprogress(0);
+          setprogress(100);
           
         }
        
@@ -120,4 +120,4 @@ const login = ({setprogress}) => {
   )
 }
 
-export default login
+export default signup
