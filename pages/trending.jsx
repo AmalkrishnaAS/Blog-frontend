@@ -27,9 +27,7 @@ const trending = ({data}) => {
             })
         }
         </div>
-        <div className='mx-auto '>
-       <a href="http://github.com" className='text-gray-600 ' target="_blank" rel="noopener noreferrer">Source : Github</a>
-       </div>
+       
     </div>
   )
 }

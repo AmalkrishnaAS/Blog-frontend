@@ -60,7 +60,7 @@ const Card = ({item}) => {
                 {item.Author}</h2>
              
               <div className="flex items-center flex-wrap ">
-              <Link href={`blog/${item.id}`}><div class="relative after:absolute after:bg-purple-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 text-sm text-purple-500 cursor-pointer">Hover over me &rarr;</div></Link>
+              <Link href={`blog/${item.id}`}><div class="relative after:absolute after:bg-purple-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 text-sm text-purple-500 cursor-pointer">Read More &rarr;</div></Link>
                 <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-gray-200 tetx-lg">
                 <ClockIcon className='h-4 w-4  mr-2' />{message}
                 </span>
