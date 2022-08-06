@@ -31,8 +31,9 @@ const Card = ({item}) => {
  <motion.div className="max-w-sm rounded-lg shadow-lg overflow-hidden"
   
  >
-          <div className="h-full border-2 border-gray-200 border-opacity-60 shadow-sm max-w-[90vw]  rounded-lg overflow-hidden">
-            <motion.img className="lg:h-48 md:h-36 w-full object-cover object-center" src={item.thumbnail?item.thumbnail:"/logo-purple.webp"} alt="blog" whileHover={{
+          <div className="  min-w-[400px]  h-full border-2 border-gray-200 border-opacity-60 shadow-sm max-w-[90vw]  rounded-lg overflow-hidden">
+            <div className='bg-gray-200'>
+            <motion.img className=" mx-auto lg:h-48 md:h-36  object-cover object-center" src={item.thumbnail?item.thumbnail:"/logo-purple.webp"} alt="blog" whileHover={{
               scale: 1.1,
               x: -5,
               y: -5,
@@ -52,6 +53,7 @@ const Card = ({item}) => {
             
           }
              />
+             </div>
             <div className="p-6">
             
               <h1 className="title-font text-lg font-medium text-gray-900 mb-1">{item.title}</h1>
