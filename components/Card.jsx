@@ -25,24 +25,7 @@ const Card = ({ item }) => {
             className=" mx-auto lg:h-48 md:h-36  object-cover object-center"
             src={item.thumbnail ? item.thumbnail : '/logo-purple.webp'}
             alt="blog"
-            whileHover={{
-              scale: 1.1,
-              x: -5,
-              y: -5,
-              transition: {
-                duration: 0.5,
-                ease: 'easeInOut',
-              },
-            }}
-            whileTap={{
-              scale: 1.05,
-              x: 5,
-              y: 5,
-              transition: {
-                duration: 0.5,
-                ease: 'easeInOut',
-              },
-            }}
+            
           />
         </div>
         <div className="p-6">
